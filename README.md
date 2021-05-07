@@ -1,8 +1,8 @@
 # levitikus
 
-## Project setup
+## Librerias necesarias
 ```
-npm install
+ npm install particles.vue
 ```
 
 ### Compiles and hot-reloads for development
