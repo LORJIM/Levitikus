@@ -3,6 +3,7 @@
 ## Librerias necesarias
 ```
  npm install particles.vue
+ npm install less-loader
 ```
 
 ### Compiles and hot-reloads for development
