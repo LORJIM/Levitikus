@@ -1,0 +1,97 @@
+@fuente: "SpacePatrol", sans-serif; //fuente a utilizar, y en caso de error utilizara sans-serif
+* { //quita lineas indeseadas
+    margin: 0px;
+    padding: 0px;
+}
+html,body { //color del background, fuente a utilizar y color de la fuente principal
+    background-color: black;
+    font-family: @fuente;
+    color:cyan;
+  }
+input[type=number]::-webkit-inner-spin-button, //quita las flechas a los inputs tipo numero
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.link { //quita el estilo de hipervinculo a los links
+    color: cyan;    
+    text-decoration:none;
+}
+button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien el puntero
+    padding: 10px;
+    font-family: @fuente;
+    cursor: pointer;
+}
+/**********************************************
+*************** FUENTES *******************
+**********************************************/
+
+@font-face {    
+    font-family: "Aishiteru";    
+    src: url("../fonts/aishiteru/Aishiteru.ttf") format("truetype");
+}
+@font-face {    
+    font-family: "SpacePatrol";    
+    src: url("../fonts/SpacePatrol/SpacePatrol.ttf") format("truetype");
+}
+/**********************************************/
+/*Componentes (Elementos)*/
+.btnTransparente{
+    background-color: transparent;
+    border:  1px solid cyan;
+    color: cyan;
+    font-size: 18px;
+}
+.btnTransparente:hover{
+    border: cyan;
+    color: black;
+    background-color: cyan;
+}
+/*Componentes (Webs)*/
+#navigationBarsComponent{
+    position:absolute;
+    margin: 0px 10% 0px 10%;
+    .topbar{
+        font-size: 20px; 
+        display: flex;
+        margin-top: 30px;
+            .nav-item{
+                padding: 0 15px;
+                padding-bottom:15px;
+                padding-top:15px;
+                line-height: 80px;
+                text-decoration:none;
+                margin-left: 25px;
+            }
+            .nav-item:hover{
+                color: #6fbaad; 
+                border-bottom: 5px solid #6fbaad; 
+            }
+            .logo{
+                width:40px;
+                height:53px;
+            }
+        
+    }
+}
+/****************************************************************/
+#homeComponent{
+    position:absolute;
+    margin: 0px 40% 0px 40%;
+    top: 250px;
+    text-align: center;
+    .container{
+        font-size: 30px; 
+        p{
+            font-size: 20px; 
+            margin-bottom: 15px;
+        }
+        .logo{
+            width:240px; 
+            height:318px;
+        }
+    }
+    
+}
