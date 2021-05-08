@@ -1,8 +1,11 @@
 # levitikus
 
-## Project setup
+## Librerias necesarias
 ```
-npm install
+ npm install particles.vue
+ npm install --save vue-router
+ npm install less-loader@7.3.0
+ npm install less
 ```
 
 ### Compiles and hot-reloads for development
