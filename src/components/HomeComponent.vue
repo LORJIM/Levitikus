@@ -7,14 +7,20 @@
        <button class="btnTransparente">Saber más</button>
      </div>
      <StatsComponent/>
+     <WhatComponent/>
+     <UseCasesComponent/>
     </section>
 </template>
 <script>
 import StatsComponent from './StatsComponent';
+import WhatComponent from './WhatComponent';
+import UseCasesComponent from './UseCasesComponent';
 export default {
   name: 'HomeComponent',
   components: {
-    StatsComponent
+    StatsComponent,
+    WhatComponent,
+    UseCasesComponent
   }
 }
 </script>

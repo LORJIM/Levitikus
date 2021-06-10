@@ -38,16 +38,31 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
 }
 /**********************************************/
 /*Componentes (Elementos)*/
-.btnTransparente{
+.particles{
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+.btnTransparente, .caja{
     background-color: transparent;
     border:  1px solid cyan;
     color: cyan;
     font-size: 18px;
 }
-.btnTransparente:hover{
+.btnTransparente:hover, .caja:hover{
     border: cyan;
     color: black;
     background-color: cyan;
+}
+.container2{ //container comun
+    display: flex;
+    overflow-x: hidden; //ESTO ES IMPORTANTE PARA ELIMINAR EL SCROLL HORIZONTAL QUE SALE CON LAS ANIMACIONES
+    justify-content: space-between;
+    font-size: 18px;
+    text-align: center;
+    h1{
+        font-size: 28px;
+    }
 }
 /*Componentes (Webs)*/
 #navigationBarsComponent{
@@ -55,9 +70,11 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
     width: -webkit-fill-available;
     padding: 0px 10% 0px 10%;
     .topbar{
+        z-index: -5;
         font-size: 20px; 
         display: flex;
         margin-top: 30px;
+        margin-bottom:840px;
             .nav-item{
                 padding: 0 15px;
                 padding-bottom:15px;
@@ -81,7 +98,7 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
 #homeComponent{
     .container{
         position:absolute;
-        margin: 0px 50% 0px 30%;
+        margin: 0px 40% 0px 30%;
         top: 250px;
         text-align: center;
         font-size: 30px; 
@@ -89,36 +106,46 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
             font-size: 20px; 
             margin-bottom: 15px;
         }
-        .logo{
-            width:240px; 
-            height:318px;
-        }
+    }
+    .logo{
+        width:240px; 
+        height:318px;
     }
     
 }
 /****************************************************************/
 #statsComponent{
-    position: absolute;
-    top:970px;
+    position: relative;
+    margin-bottom:180px;
     height:260px;
     left:0;
     right:0;
+    width: 99.5vw;/* <-- children as wide as the browser window (viewport) */
+    margin-left: calc(-1 * ((100vw - 100%) / 2)); //esto tambien es necesario para saltarnos la limitacion de width del elemento padre
     .container2{
-        background-color: purple;
-        display: flex;
+        background-color: darkblue;
         padding: 130px 0 130px 0;
-        justify-content: space-between;
-        font-size: 18px;
-        text-align: center;
         div{
             margin: 0 4%;
-            h1{
-                font-size: 28px;
-            }
             hr{
                 margin: 2% 0;
             }
         }
+    }
+}
+/****************************************************************/
+#whatComponent{
+    position: relative;
+    #containerQue{
+        background-color:transparent;
+        text-align: initial;
+        div{
+            max-width: 100%;
+            padding-right: 15%;
+        }
+    }
+    #lideres{
+        padding: 3% 15%;
     }
 }
 /****************************************************************/

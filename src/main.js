@@ -1,5 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
+import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/js/all.js';
 import Particles from "particles.vue";
 import VueRouter from 'vue-router';
 import NavigationBarsComponent from "./components/NavigationBarsComponent.vue";
