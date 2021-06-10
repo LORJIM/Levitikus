@@ -1,5 +1,5 @@
 <template>
-    <footer id="footer">
+    <footer id="footerComponent">
         <div class="footer-help">
             <button class="help-button">
                 <span class="help-icon-Eurocaja">b</span>

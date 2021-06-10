@@ -52,7 +52,8 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
 /*Componentes (Webs)*/
 #navigationBarsComponent{
     position:absolute;
-    margin: 0px 10% 0px 10%;
+    width: -webkit-fill-available;
+    padding: 0px 10% 0px 10%;
     .topbar{
         font-size: 20px; 
         display: flex;
@@ -78,11 +79,11 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
 }
 /****************************************************************/
 #homeComponent{
-    position:absolute;
-    margin: 0px 40% 0px 40%;
-    top: 250px;
-    text-align: center;
     .container{
+        position:absolute;
+        margin: 0px 50% 0px 30%;
+        top: 250px;
+        text-align: center;
         font-size: 30px; 
         p{
             font-size: 20px; 
@@ -94,4 +95,33 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
         }
     }
     
+}
+/****************************************************************/
+#statsComponent{
+    position: absolute;
+    top:970px;
+    height:260px;
+    left:0;
+    right:0;
+    .container2{
+        background-color: purple;
+        display: flex;
+        padding: 130px 0 130px 0;
+        justify-content: space-between;
+        font-size: 18px;
+        text-align: center;
+        div{
+            margin: 0 4%;
+            h1{
+                font-size: 28px;
+            }
+            hr{
+                margin: 2% 0;
+            }
+        }
+    }
+}
+/****************************************************************/
+#footerComponent{
+    display: none; //de momento pa que no moleste
 }

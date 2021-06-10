@@ -4,6 +4,11 @@ import Particles from "particles.vue";
 import VueRouter from 'vue-router';
 import NavigationBarsComponent from "./components/NavigationBarsComponent.vue";
 import HomeComponent from './components//HomeComponent.vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+//animate on scroll
+AOS.init();
 
 Vue.use(VueRouter);
 Vue.use(Particles);
