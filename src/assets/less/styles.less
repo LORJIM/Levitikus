@@ -39,9 +39,9 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
 /**********************************************/
 /*Componentes (Elementos)*/
 .particles{
-    position: fixed;
+    position: absolute; //fixed si lo quisieramos para toda la pagina
     width: 100%;
-    z-index: -1;
+    z-index: 0; //necesario para mostrarlo por encima de los margenes y que se muevan las particulas con hover
 }
 .btnTransparente, .caja{
     background-color: transparent;
@@ -56,25 +56,37 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
 }
 .container2{ //container comun
     display: flex;
+    overflow-y: hidden; //eliminar scroll de animaciones AOS
     overflow-x: hidden; //ESTO ES IMPORTANTE PARA ELIMINAR EL SCROLL HORIZONTAL QUE SALE CON LAS ANIMACIONES
     justify-content: space-between;
     font-size: 18px;
     text-align: center;
-    h1{
-        font-size: 28px;
-    }
+}
+h1{ //titulos
+    font-size: 28px;
+}
+.vr{ //linea vertical
+    border-left: 3px solid blueviolet;
+}
+.logoSombra{ //logo profesional con sombra, se aplica a imagenes
+    width: 200px;
+    height: auto;
+    box-shadow: 10px 10px 15px rgb(82 82 82);
 }
 /*Componentes (Webs)*/
 #navigationBarsComponent{
+    background: linear-gradient( rgba(0,0,0,.7), rgba(0,0,0,.7) ), url(../img/systemStars.jpg) fixed center center no-repeat;
     position:absolute;
     width: -webkit-fill-available;
     padding: 0px 10% 0px 10%;
     .topbar{
-        z-index: -5;
         font-size: 20px; 
         display: flex;
         margin-top: 30px;
-        margin-bottom:840px;
+        margin-bottom:830px;
+            a{
+                z-index: 1; //necesario para que se muestren por encima de particles
+            }
             .nav-item{
                 padding: 0 15px;
                 padding-bottom:15px;
@@ -97,6 +109,7 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
 /****************************************************************/
 #homeComponent{
     .container{
+        z-index: 1; //necesario para que se muestre por encima de particles
         position:absolute;
         margin: 0px 40% 0px 30%;
         top: 250px;
@@ -149,6 +162,108 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
     }
 }
 /****************************************************************/
+#usecasesComponent{
+    .container2{
+        display:initial;
+    }
+    .cajas{
+        display:flex;
+        margin: 0 4%;
+        div{
+            padding: 3%;
+            width: 300px;
+        }
+    }
+}
+/****************************************************************/
+#roadmapComponent{
+    .vr{
+        margin-left:40%;
+        position: absolute;
+        height: 1900px;
+    }
+    margin-top:50px;
+    h1{
+        text-align: center;
+    }
+    .paradaIzquierda, .paradaDerecha{
+        padding: 20px 30px;
+        position: relative;
+        border-radius: 6px;
+        background-color: darkblue;
+        transition-duration: .5s;
+        h1{
+            text-align: initial;
+        }
+    }
+    .paradaDerecha{
+        margin-left:55%;
+    }
+    .paradaIzquierda{
+        margin-right:55%;
+    }
+    .paradaIzquierda:hover, .paradaDerecha:hover{
+        background-color: black;
+        transition: background 0.5s ease-in-out;
+    }
+    .paradaDerecha::before, .paradaIzquierda::before{
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        border: medium solid #252931;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent darkblue;
+        transition-duration: .5s;
+    }
+    .paradaDerecha::before{
+        right: 100%;
+        transform: rotate(180deg); //para que la flecha apunte hacia a la linea que esta a su izquierda
+    }
+    .paradaIzquierda::before{
+        left: 100%;
+    }
+    .paradaDerecha::after, .paradaIzquierda::after{
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: darkblue;
+        border: 8px solid darkblue;
+        top: 0px;
+        border-radius: 50%;
+    }
+    .paradaIzquierda::after{
+        margin-left: 8%;
+        left: 100%;
+    }
+    .paradaDerecha::after{
+        margin-right: 8%;
+        right: 100%;
+    }
+}
+/****************************************************************/
+#sponsorsComponent{
+    margin-top:50px;
+    text-align: center;
+    .container2{
+        margin: 0 20%;
+    }
+}
+/****************************************************************/
 #footerComponent{
-    display: none; //de momento pa que no moleste
+    display: flex;
+    position: relative;
+    width: 99.5vw;
+    margin-left: calc(-1 * ((100vw - 100%) / 2));
+    right:0;
+    left:0;
+    bottom: 0;
+    align-items: center;
+    justify-content: space-between;
+    background: darkcyan;
+    height: 149px;
+    color: white;
 }

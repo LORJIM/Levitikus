@@ -9,18 +9,24 @@
      <StatsComponent/>
      <WhatComponent/>
      <UseCasesComponent/>
+     <RoadmapComponent/>
+     <SponsorsComponent/>
     </section>
 </template>
 <script>
 import StatsComponent from './StatsComponent';
 import WhatComponent from './WhatComponent';
 import UseCasesComponent from './UseCasesComponent';
+import RoadmapComponent from './RoadmapComponent';
+import SponsorsComponent from './SponsorsComponent';
 export default {
   name: 'HomeComponent',
   components: {
     StatsComponent,
     WhatComponent,
-    UseCasesComponent
+    UseCasesComponent,
+    RoadmapComponent,
+    SponsorsComponent
   }
 }
 </script>

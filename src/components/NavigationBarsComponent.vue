@@ -30,5 +30,14 @@
               </router-link>
       </nav>
       <router-view></router-view>
+      <FooterComponent/>
    </section>
 </template>
+<script>
+import FooterComponent from './FooterComponent.vue';
+export default {
+  components: {
+    FooterComponent
+  }  
+}
+</script>
