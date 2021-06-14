@@ -43,13 +43,23 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
     width: 100%;
     z-index: 0; //necesario para mostrarlo por encima de los margenes y que se muevan las particulas con hover
 }
-.btnTransparente, .caja{
+.cajaNegra{ //caja peque negra
+    padding: 5px;
+    width: 50px;
+    background-color: black;
+    border:  1px solid cyan;
+    color: cyan;
+    text-align: center;
+    font-size: 18px;
+}
+.btnTransparente, .caja, .cajapeque{
     background-color: transparent;
     border:  1px solid cyan;
+    text-align: center;
     color: cyan;
     font-size: 18px;
 }
-.btnTransparente:hover, .caja:hover{
+.btnTransparente:hover, .caja:hover, .cajapeque:hover, .cajaNegra:hover{
     border: cyan;
     color: black;
     background-color: cyan;
@@ -246,7 +256,7 @@ h1{ //titulos
 }
 /****************************************************************/
 #sponsorsComponent{
-    margin-top:50px;
+    margin:50px 0px;
     text-align: center;
     .container2{
         margin: 0 20%;
@@ -254,7 +264,6 @@ h1{ //titulos
 }
 /****************************************************************/
 #footerComponent{
-    display: flex;
     position: relative;
     width: 99.5vw;
     margin-left: calc(-1 * ((100vw - 100%) / 2));
@@ -264,6 +273,31 @@ h1{ //titulos
     align-items: center;
     justify-content: space-between;
     background: darkcyan;
-    height: 149px;
+    height: 260px;
     color: white;
+    .cajaNegra{
+        margin: 0 49%;
+        position: absolute;
+        top:-25px;
+        cursor: pointer;
+    }
+    .container2{
+        display: initial;
+        .cajas{
+            margin: 0 4%;
+            .cajapeque{
+                margin: 1%;
+                font-size: 35px;
+                padding: 5px 10px;
+            }
+        }
+    }
+    #copyright{
+        background-color: white;
+        color: black;
+        margin-top: 40px;
+        line-height: 60px;
+        float: right;
+        width: -webkit-fill-available;
+    }
 }

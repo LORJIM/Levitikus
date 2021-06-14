@@ -37,7 +37,7 @@
                 Coinbase, Binance, Paypal, Skrill
             </div>
             <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" class="caja">
-                <i class="fas fa-connectdevelop fa-4x"></i><br>
+                <i class="fab fa-connectdevelop fa-4x"></i><br>
                 <h1>Tokenización</h1>
                 <br><br>
                 Bitcoin, Ethereum, Binance Coin, Cardano, Ripple
