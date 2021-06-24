@@ -83,25 +83,40 @@ h1{ //titulos
     height: auto;
     box-shadow: 10px 10px 15px rgb(82 82 82);
 }
+.primer{ //para los primeros elementos de los componentes que forman el homeComponent, deja espacio para el navigationBar
+    padding-top: 150px;
+}
 /*Componentes (Webs)*/
 #navigationBarsComponent{
     background: linear-gradient( rgba(0,0,0,.7), rgba(0,0,0,.7) ), url(../img/systemStars.jpg) fixed center center no-repeat;
     position:absolute;
     width: -webkit-fill-available;
     padding: 0px 10% 0px 10%;
+    .scrolled{ //para cambiar el color de la navigation bar cuando hacemos scroll
+        background-color: darkslategray;
+        transition: background 0.5s ease-in-out;
+    }
     .topbar{
         font-size: 20px; 
+        transition: background 0.5s ease-in-out; //para cuando cambiamos el background al hacer scroll, pero de vuelta al top
         display: flex;
-        margin-top: 30px;
-        margin-bottom:830px;
+        z-index: 2; //necesario para que se muestren por encima de particles(0) y container central(1)
+        overflow-x: hidden;
+        margin-left: -10%;
+        padding-left: 10%;
+        width: 99.5vw; //esto tambien es necesario para saltarnos la limitacion de width del elemento padre
+        position: fixed;
+        padding-top: 30px;
             a{
                 z-index: 1; //necesario para que se muestren por encima de particles
             }
             .nav-item{
-                padding: 0 15px;
-                padding-bottom:15px;
+                padding: 0 15px;   
+                padding-bottom: 0px;
+                height: 70px;
                 padding-top:15px;
                 line-height: 80px;
+                position: sticky;
                 text-decoration:none;
                 margin-left: 25px;
             }
@@ -112,6 +127,7 @@ h1{ //titulos
             .logo{
                 width:40px;
                 height:53px;
+                padding-bottom:15px;
             }
         
     }
@@ -139,6 +155,7 @@ h1{ //titulos
 /****************************************************************/
 #statsComponent{
     position: relative;
+    margin-top:880px; //esta distancia con respecto a topbar es lo que ocupa particles
     margin-bottom:180px;
     height:260px;
     left:0;
@@ -299,5 +316,47 @@ h1{ //titulos
         line-height: 60px;
         float: right;
         width: -webkit-fill-available;
+    }
+}
+/****************************************************************/
+#aboutComponent{
+    width: 99.5vw;/* <-- children as wide as the browser window (viewport) */
+    margin-left: calc(-1 * ((100vw - 100%) / 2)); //esto tambien es necesario para saltarnos la limitacion de width del elemento padre
+    background-color: darkblue;
+    .container{
+        z-index: 1; //necesario para que se muestre por encima de particles
+        position:absolute;
+        margin: 0px 40% 0px 45%;
+        top: 350px;
+        text-align: center;
+        font-size: 30px; 
+        p{
+            font-size: 20px; 
+            margin-bottom: 15px;
+        }
+    }
+    .container2{
+        justify-content: initial;
+        padding-bottom: 100px;
+        div{
+            width: 100%;
+        }
+        .izquierda{
+            padding-left: 15%;
+        }
+        .derecha{
+            padding-right: 15%;
+        }
+    }
+    h1{
+        margin: 30px 0px;
+        text-align: center;
+    }
+    #primera{
+        margin-top:940px; //esta distancia con respecto a topbar es lo que ocupa particles
+    }
+    .secciones{
+        padding-top:30px;
+        margin-bottom:30px;
     }
 }

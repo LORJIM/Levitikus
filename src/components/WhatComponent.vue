@@ -1,6 +1,6 @@
 <template>
     <section id="whatComponent">
-        <div class="container2" id="containerQue">
+        <div class="container2 primer" id="containerQue">
             <div>
                 <h1>¿Qué es Levitikus?</h1>
                 <br><br>
@@ -19,7 +19,7 @@
             <div data-aos="fade-zoom-in"
         data-aos-easing="ease-in-back"
         data-aos-delay="300"
-        data-aos-offset="0">
+        data-aos-offset="300">
                 <h1>Líderes en el Sector</h1>
                 <br><br>
                 L0RJiM es uno de los mejores programadores de la historia, buena inversión para los años venideros. Confía en nosotros y te harás millonario.

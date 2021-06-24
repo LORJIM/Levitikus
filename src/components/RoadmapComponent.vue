@@ -1,12 +1,12 @@
 <template>
     <section id="roadmapComponent">
-        <h1>Trayectoria</h1>
+        <h1 class="primer">Trayectoria</h1>
         <br><br><br>
             <div class='vr'></div>
             <div class='paradaDerecha' data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0">
+            data-aos-offset="100">
                 <h1>Apocalipsis</h1><br>
                 Marzo 2019 - Junio 2019<br><br>
                 <ul>
@@ -21,7 +21,7 @@
             <div class='paradaIzquierda' data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0">
+            data-aos-offset="100">
                 <h1>Tienda Online</h1><br>
                 Septiembre 2019 - Octubre 2019<br><br>
                 <ul>
@@ -33,7 +33,7 @@
             <div class='paradaDerecha' data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0">
+            data-aos-offset="100">
                 <h1>Terminal Financiero</h1><br>
                 Octubre 2019 - Abril 2020<br><br>
                 <ul>
@@ -49,7 +49,7 @@
             <div class='paradaIzquierda' data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0">
+            data-aos-offset="100">
                 <h1>EcoPocket</h1><br>
                 Abril 2020 - Julio 2020<br><br>
                 <ul>
@@ -65,7 +65,7 @@
             <div class='paradaDerecha' data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0">
+            data-aos-offset="100">
                 <h1>Portal de Proveedores</h1><br>
                 Agosto 2020 - Enero 2021<br><br>
                 <ul>
@@ -87,7 +87,7 @@
             <div class='paradaIzquierda' data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0">
+            data-aos-offset="100">
                 <h1>Exodus</h1><br>
                 Abril 2021<br><br>
                 <ul>
@@ -105,7 +105,7 @@
             <div class='paradaDerecha' data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0">
+            data-aos-offset="100">
                 <h1>Levitikus</h1><br>
                 Mayo 2021 - Junio 2021<br><br>
                 <ul>
