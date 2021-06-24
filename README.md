@@ -10,6 +10,7 @@
  npm install --save aos@next
  npm install --save @fortawesome/fontawesome-free
  npm install vue-loading-overlay@3.4.1
+ npm install --save axios vue-axios
 ```
 
 ### Compiles and hot-reloads for development
