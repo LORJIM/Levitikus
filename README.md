@@ -9,7 +9,7 @@
  npm install less
  npm install --save aos@next
  npm install --save @fortawesome/fontawesome-free
- npm install vue-loading-overlay
+ npm install vue-loading-overlay@3.4.1
 ```
 
 ### Compiles and hot-reloads for development
