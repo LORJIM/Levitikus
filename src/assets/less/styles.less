@@ -60,7 +60,7 @@ button{ //espacio alrededor del texto para que los botones luzcan mejor, tambien
     font-size: 18px;
 }
 .btnTransparente:hover, .caja:hover, .cajapeque:hover, .cajaNegra:hover{
-    border: cyan;
+    border: 1px solid cyan;
     color: black;
     background-color: cyan;
 }
@@ -86,6 +86,17 @@ h1{ //titulos
 .primer{ //para los primeros elementos de los componentes que forman el homeComponent, deja espacio para el navigationBar
     padding-top: 150px;
 }
+input[type=text],input[type=password],input[type=number]{
+    height: 35px;
+    outline: none; //para quitar el resplandor cuando seleccionamos
+    width: 100%;
+    background-color: black;
+    border: 1px solid cyan;
+    color: cyan;
+    padding: 0 5%;
+    margin-bottom: 20px;
+}
+
 /*Componentes (Webs)*/
 #navigationBarsComponent{
     background: linear-gradient( rgba(0,0,0,.7), rgba(0,0,0,.7) ), url(../img/systemStars.jpg) fixed center center no-repeat;
@@ -358,5 +369,16 @@ h1{ //titulos
     .secciones{
         padding-top:30px;
         margin-bottom:30px;
+    }
+}
+/****************************************************************/
+#loginComponent{
+    .container{
+        z-index: 1;
+        position:absolute;
+        top: 350px;
+        text-align: center;
+        font-size: 30px;     
+        margin: 0px 25%;
     }
 }
