@@ -2,7 +2,7 @@
     <section id="aboutComponent">
       <div class="container">
        <h1>Sobre Nosotros</h1>
-       <button class="btnTransparente">Saber más</button>
+       <button @click="prueba()" class="btnTransparente">Lanzar API</button>
       </div>
       <h1 id="primera" class="secciones">Nuestra Tecnología</h1>
       <div class="container2">
@@ -35,5 +35,20 @@
 <script>
 export default {
   name: 'AboutComponent',
+  methods:{
+      prueba(){
+          var baseURI = '/products';
+            let loader = this.$loading.show();
+            this.$http.get(baseURI)
+            .then(() => { 
+            })
+            .catch(function (error) {
+               console.log(error);
+            })
+            .then(function () {
+                loader.hide();
+            });
+      }
+  }
 }
 </script>

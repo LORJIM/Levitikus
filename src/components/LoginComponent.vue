@@ -50,7 +50,6 @@ export default {
                         };
                         this.$http.post(baseURI, params, options) //obtener Access Token
                         .then((result) => {
-                            console.log(result);
                             this.$cookies.set('RT',result.data.refresh_token);
                             this.$http.defaults.headers.common['Authorization'] = 'Bearer '+result.data.access_token; //esto establece nuestro access token en el header autorizacion de todas las llamadas, siempre que estemos logeados
                             this.$router.push('/about');
@@ -73,9 +72,6 @@ export default {
             .then(function () {
                 loader.hide();
             });
-
-            
-            
       }
   }
 }

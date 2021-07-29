@@ -45,15 +45,73 @@ axios.defaults.withCredentials = true; //withCredentials es necesario para manda
 //INTERCEPTORES
 //PARA PARAMETRIZAR URL ANTES DE CADA LLAMADA
 axios.interceptors.request.use(config => {
-  config.url=process.env.VUE_APP_BASE_URL+config.url;
-  /*if(!config.params['refresh']){ //solo ponemos la url cuando es la primera llamada
+  if(config.params==null || !config.params['refresh']){ //solo ponemos la url cuando es la primera llamada, no la del refresh token
     //url del entorno parametrizada
     config.url=process.env.VUE_APP_BASE_URL+config.url;
-  }*/
+  }
   return config;
 }, error => {
   // handle the error
   return Promise.reject(error);
+});
+
+//PARA REFRESCAR TOKEN CUANDO LA RESPUESTA DE UNA LLAMADA DEVUELVA ERROR POR EXPIRACION
+axios.interceptors.response.use((response) => {
+  return response;
+}, error => {
+  //PARA REFRESCAR TOKEN CUANDO PROCEDA
+  // Return any error which is not due to authentication back to the calling service
+  if(error.response!=null){
+    if (error.response.status !== 401) {
+      return new Promise((resolve, reject) => {
+        reject(error);
+      });
+    }
+  }
+
+
+  // Try request again with new token
+  return new Promise((resolve, reject) => {
+    const params = new URLSearchParams();
+      params.append('refresh_token',  Vue.$cookies.get('RT'));
+      params.append('grant_type', 'refresh_token');
+      const options = {
+        headers: {
+            'Authorization':'Basic Y2xpZW50MTpzZWNyZXQx'
+        }
+      };
+    axios.post('/oauth2/token', params,options)
+      .then(response => {
+
+        Vue.$cookies.set('RT',response.data.refresh_token);
+
+        resolve(response.data.access_token);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  }).then((token) => {
+
+    // New request with new token
+    const config = error.config;
+    config.params={
+      'refresh' : true //indicador de segunda llamada
+    };
+    config.headers['Authorization'] = `Bearer ${token}`; //access token nuevo para hacer la llamada original
+
+    return new Promise((resolve, reject) => {
+      axios.request(config).then(response => {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`; //si va bien lo ponemos default para las proximas llamadas
+        resolve(response);
+      }).catch((error) => {
+        reject(error);
+      })
+    });
+
+  })
+  .catch((error) => {
+    Promise.reject(error);
+  });
 });
 
 Vue.prototype.$http = axios;
