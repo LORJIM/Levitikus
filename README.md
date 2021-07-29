@@ -9,6 +9,10 @@
  npm install less
  npm install --save aos@next
  npm install --save @fortawesome/fontawesome-free
+ npm install vue-loading-overlay@3.4.1
+ npm install --save axios vue-axios
+ npm install zip-a-folder
+ npm install vue-cookies --save
 ```
 
 ### Compiles and hot-reloads for development
